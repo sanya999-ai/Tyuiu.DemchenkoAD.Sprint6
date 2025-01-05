@@ -6,17 +6,10 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task6.V19.Lib
     {
         public string CollectTextFromFile(string path)
         {
-            string text = File.ReadAllText(path);
-            string[] words = text.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            string result = string.Empty;
+            string fileContent = File.ReadAllText(path);
+            string[] words = fileContent.Split(new[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (string word in words)
-            {
-                if (word.Contains("l"))
-                {
-                    result += word + "";
-                }
-            }
+            string result = string.Join(" ", words.Where(word => word.Contains('l')));
 
             return result;
         }
