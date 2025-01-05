@@ -14,7 +14,7 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task6.V19.Lib
             {
                 if (word.Contains("l"))
                 {
-                    result += word + " ";
+                    result += word + "";
                 }
             }
 
