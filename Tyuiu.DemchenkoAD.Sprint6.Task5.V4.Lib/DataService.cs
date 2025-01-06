@@ -11,12 +11,11 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task5.V4.Lib
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
-                {
                     len++;
-                }
             }
 
             double[] numsArray = new double[len];
+
             int index = 0;
             using (StreamReader reader = new StreamReader(path))
             {
@@ -27,11 +26,9 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task5.V4.Lib
                     index++;
                 }
             }
-            numsArray = numsArray.Where(val => val % 1 == 0).ToArray();
-            return numsArray;
-            {
 
-            }
+            numsArray = numsArray.Where(val => ((val % 1 == 0) && (val != 0))).ToArray();
+            return numsArray;
         }
     }
 }
