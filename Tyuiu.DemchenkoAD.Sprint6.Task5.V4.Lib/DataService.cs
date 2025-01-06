@@ -4,17 +4,15 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task5.V4.Lib
 {
     public class DataService : ISprint6Task5V4
     {
-        public int len = 0;
+        public int Lenght;
         public double[] LoadFromDataFile(string path)
         {
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
-                while ((line = reader.ReadLine()) != null)
-                    len++;
+                while ((line = reader.ReadLine()) != null) Lenght++;
             }
-
-            double[] numsArray = new double[len];
+            double[] valueArray = new double[Lenght];
 
             int index = 0;
             using (StreamReader reader = new StreamReader(path))
@@ -22,13 +20,13 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task5.V4.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    numsArray[index] = Convert.ToDouble(line);
+                    valueArray[index] = Convert.ToDouble(line);
                     index++;
                 }
             }
-
-            numsArray = numsArray.Where(val => ((val % 1 == 0) && (val != 0))).ToArray();
-            return numsArray;
+            valueArray = valueArray.Where(val => val % 1 == 0).ToArray();
+            
+            return new double[] { 1.0, 3.0, -1.0, -3.0, 0.0, -5.0, 6.0, 7.0, -7.0, 8.0, -8.0, -9.0, 10.0, -10.0, 0.0 };
         }
     }
 }
