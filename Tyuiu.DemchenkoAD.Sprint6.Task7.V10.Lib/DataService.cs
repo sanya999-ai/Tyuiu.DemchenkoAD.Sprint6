@@ -27,7 +27,7 @@ namespace Tyuiu.DemchenkoAD.Sprint6.Task7.V10.Lib
                     {
                         matrix[i, j] = int.Parse(values[j]);
 
-                        if (matrix[4, j] >= 5 && matrix[4, j] < 10)
+                        if (matrix[4, j] >= 5 && matrix[4, j] < 11)
                         {
                             matrix[4, j] = 0;
                         }
